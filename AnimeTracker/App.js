@@ -21,12 +21,14 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {Settings} from "@screens/Settings";
 import {Home} from "@screens/Home";
 import {TableView} from "@screens/TableView";
+import {CardDetails} from '@screens/CardDetails';
 
 // Navigator Element
 const AppNavigator = createStackNavigator({
   HomeScreen: { screen: Home },
   SettingScreen: { screen: Settings },
-  TableView: { screen: TableView }
+  TableView: { screen: TableView },
+  CardDetails: {screen: CardDetails},
 
 });
 

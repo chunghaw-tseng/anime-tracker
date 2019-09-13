@@ -8,42 +8,45 @@ import {
   StyleSheet,
   ImageBackground 
  } from 'react-native';
+ import { NavigationActions, StackActions } from 'react-navigation';
 
 export class Home extends Component {
 
   static navigationOptions = {
     //To hide the ActionBar/NavigationBar
-    header: null,
+    header: null
 };
-navigateToScreen = () => {
-  console.log("Navigate");
-  // this.props.navigation.push("SettingsScreen");
-  // this.props.navigation.navigate("SettingsScreen");
-
-}
+  navigateToScreen = () => {
+    this.props.navigation.dispatch(
+      StackActions.reset({
+       index: 0,
+       actions: [NavigationActions.navigate({ routeName: "TableView" })]
+        })
+      );
+  }
 
   render() {
     return (
       <View>
         <ImageBackground source={require('@static/background.jpg')} style={styles.image_bg}>
-          {/* <Text style={styles.app_title} >This is the home screen</Text> */}
-          <TouchableOpacity style={styles.home_btn} onPress={this.navigateToScreen}>
-            <View>
-              <Text style={styles.home_btn_txt}>Start</Text>
-            </View>
+          <View style={styles.container}>
+            <TouchableOpacity style={styles.home_btn} onPress={this.navigateToScreen}>
+              <View>
+                <Text style={styles.home_btn_txt}>Start Watching</Text>
+              </View>
             </TouchableOpacity>
+          </View>
         </ImageBackground>
       </View>
     )
   }
-
 }
 
 
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    justifyContent: 'center'
+    flexDirection: "column-reverse"
   },
   image_bg: {
     width: '100%', 
@@ -53,12 +56,7 @@ const styles = StyleSheet.create({
     color: "#FFF"
   },
   home_btn:{
-    opacity: 1,
-    borderRadius:5,
-    padding:10,
-    width: 200,
-    height:50
-
+    padding:10
   },
   home_btn_txt:{
     color: "#FFF",

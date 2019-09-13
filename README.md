@@ -14,6 +14,16 @@ To create new React Native appication
     react-native run-android
 ```
 
+## Debugging
+To debug the react-native application, you can remotely debug the js using chrome developing tools by accessing
+[React Native Debugger](http://localhost:8081/debugger-ui/) after the application is running. In other for this to work, you need to enable **Debug JS Remotely** from the phone by shaking and selecting it.
+
+
+## Learning UI Flex
+Resources avaliable
+[Flex Playgorund](https://yogalayout.com/docs/flex-direction/)
+[Tips on Flex React Native](https://blog.reactnativecoach.com/understanding-flex-in-react-native-b34dfb4b16d1)
+
 ### Adding navigation
 To add navigation some packages need to be installed
 ```
